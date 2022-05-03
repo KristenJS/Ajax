@@ -1,1 +1,1 @@
-Ajax
+AJAX
