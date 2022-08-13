@@ -45,13 +45,13 @@ const iterate = (userid, obj) => {
         if (typeof obj[_key] === 'object') {
             Object.keys(obj[_key]).forEach(k => {
                 resObj2 += `<p> 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${k}: <span> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>${k}</b>: <span> 
                 ${obj[_key][k]} </span> 
                 </p>`
             }) 
         }  
         userHtml2 += `<p>
-            &nbsp;&nbsp;&nbsp; ${_key}: <span 
+            &nbsp;&nbsp;&nbsp; <b>${_key}</b>: <span 
             oninput='changeUserData(${userid}, "${_key}", this.innerText)'
             class='${_key}'
             contenteditable="true"> ${_key === 'geo' ? resObj2 : obj[_key] } 
@@ -70,7 +70,7 @@ let createUser = function (user, index) {
             resObj = iterate(user.id, user[key]);
         }
         userHtml += `<p>
-            ${key}: 
+            <b>${key}</b>: 
             <span 
                 oninput='changeUserData(${user.id}, "${key}", this.innerText)'
                 class='${key}' 
